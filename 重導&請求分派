@@ -1,0 +1,13 @@
+重導(redirect)
+
+response.sendRedirect("URL");
+
+ 1. 絕對URL: 完整URL路徑
+ 2. 相對URL:
+ 假設使用者原本得的路徑為 http://www.wickedlysmart.com/myApp/cool/bar.do
+ a. 使用/開頭: 相對於Web Container root的URL
+    sendEedirect("/foo/stuff.html");
+    ==>http://www.wickedlysmart.com/foo/stuff.html
+ b. 不使用/開頭: 相對於原始請求URL的相對路徑
+    sendEedirect("foo/stuff.html");
+    ==>http://www.wickedlysmart.com/myApp/cool/foo/stuff.html
