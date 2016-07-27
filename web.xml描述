@@ -1,12 +1,60 @@
-Enter file contents here
-<!DOCTYPE html>
-<html>
- <head>
-  <meta charset="utf-8"/>
- </head>
- <body>
+
   web.xml 用配置設定資訊
   
+  1. 根元素 <web-app></web-app>
   
- </body>
-<html>
+  2. URL對應
+  目的: 1. 避免外部得知結構 2. 具有移動及組織結構的彈性，避免修改客戶端程式碼
+
+    <servlet>
+     <servlet-name></servlet-name>
+     <servlet-class><servlet-class>
+    </servlet>
+    <servlet-mapping>
+     <servlet-name></servlet-name>
+     <url-pattern></url-pattern>
+    </servlet-mapping>
+
+<servlet>將內部名稱對應到類別全名
+
+<servlet-mapping> 將內部名稱對應到公開URL名稱
+
+3. ServletConfig設定
+   每一個Servlet都有一個ServletConfig物件
+     <servlet>
+     <init-param> 
+      <param-name></param-name>
+      <param-value></param-value>
+     </init-param>
+    </servlet>
+   
+4. ServletContext設定
+ 一個Web Container只有一個ServletContext物件
+ <context-param>
+    <param-name></para-name>
+    <param-value></param-value>
+    <description></description>
+</context-param>
+  
+5. 讓JSP不能使用scripting元素(Scriptlet、Java運算式、宣告)
+ <jsp-config>
+  <jsp-property-group>
+   <url-pattern>*.jsp</url-pattern>
+   <scripting-invalid>true</scripting-invalid>
+  </jsp-property-group>
+  </jsp-config>
+ </jsp-config>
+ 
+ 6. 讓EL在JSP中被忽略
+  <jsp-config>
+  <jsp-property-group>
+   <url-pattern>*.jsp</url-pattern>
+   <el-ignored>true</el-ignored>
+  </jsp-property-group>
+  </jsp-config>
+ </jsp-config>
+ 
+ 或在頁面使用page屬性
+ <%@ page isELIgnored="true" %>
+
+
