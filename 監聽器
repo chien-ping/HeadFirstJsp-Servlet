@@ -1,42 +1,67 @@
 
 javax.servlet.ServletContextAttributeListener
+[要在web.xml註冊]
 [接口方法] attributeAdded() attributeReoved() attributeReplaced()
 [事件類型] ServletContextAttributeEvent
-[使用情節] 追蹤 ServletContext中的屬性是否被新增、移除、取代
+[使用情節] 當應用程式的某部分呼叫servletContext的setAttribute()時
+           當應用程式的某部分呼叫servletContext的removeAttribute()時
+           當應用程式的某部分呼servletContext的setAttribute()時，而且該屬性的名稱已經被繫結到servletContext時
+           event 物件可以取得觸發此事件的名稱與值，但是在 attributeReplaced()時是取到被覆蓋之前的值
 
 
 javax.servlet.http.HttpSessionListener
+[要在web.xml註冊]
 [接口方法] sessionCreated() sessionDestroyed()
 [事件類型] HttpSessionEvent
 [使用情節] 當Container剛建立session時，此時客戶端上尚未在請求中傳送過此session ID
            當Container將session設為無效時，可能由於Session逾時或程式呼叫session的invalidate()方法
 
 javax.servlet.ServletRequestistener
+[要在web.xml註冊]
 [接口方法] requestInitialized() requestDestroyed()
 [事件類型] ServletRequestEvent
-[使用情節] 
+[使用情節] 當request被初始化
+           當request被銷毀
+           
 
 javax.servlet.ServletRequestAttributeListener
+[要在web.xml註冊]
 [接口方法] attributeAdded() attributeReoved() attributeReplaced()
 [事件類型] ServletRequestAttributeEvent
-[使用情節] 追蹤 request中的屬性是否被新增、移除、取代
+[使用情節] 當應用程式的某部分呼叫request的setAttribute()時
+           當應用程式的某部分呼叫request的removeAttribute()時
+           當應用程式的某部分呼request的setAttribute()時，而且該屬性的名稱已經被繫結到這個request時
+           event 物件可以取得觸發此事件的名稱與值，但是在 attributeReplaced()時是取到被覆蓋之前的值
 
 javax.servlet.http.HttpSessionBindingListener
+[不用再DD註冊，因為並非關聯session本身，而是session的屬性]
 [接口方法] valueBound() valueUnBound()
 [事件類型] HttpSessionBindingEvent
-[使用情節] 
+[使用情節] session屬性被繫結到session的時間點
+           當屬性被繫結到session中時
+           當屬性被移出session
 
 javax.servlet.http.HttpSessionAttributeListener
+[要在web.xml註冊]
 [接口方法] attributeAdded() attributeReoved() attributeReplaced()
 [事件類型] HttpSessionBindingEvent
-[使用情節] 
+[使用情節] 當應用程式的某部分呼叫session的setAttribute()時
+           當應用程式的某部分呼叫session的removeAttribute()時
+           當應用程式的某部分呼叫session的setAttribute()時，而且該屬性的名稱已經被繫結到這個session時
+           event 物件可以取得觸發此事件的名稱與值，但是在 attributeReplaced()時是取到被覆蓋之前的值
 
 javax.servlet.ServletContextListener
+[要在web.xml註冊]
 [接口方法] contextInitialized() contextDestroyed()
 [事件類型] ServletContexEvent
-[使用情節] 
+[使用情節] 當被context初始化
+           當context被銷毀
 
 javax.servlet.http.HttpSessionActivationListener
-[接口方法] sessionDidActivate() sessionWillPassivate()
+[不用再DD註冊，因為並非關聯session本身，而是session的屬性]
+[接口方法] sessionWillPassivate() sessionDidActivate() 
 [事件類型]HttpSessionEvent
-[使用情節] 
+[使用情節] 當Session即將被鈍化時，當Container即將要把session遷移到不同的JVM，此事件會在session準備移動前被觸發，
+好讓session屬性能進行準備
+當session已經被活化，當Container剛把session遷移到不同的JVM時，此事件會在遷移完成後，應用程式的其他能夠呼叫
+session的getAttribute()之前被觸發，讓session再被存取前做準備。
