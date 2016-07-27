@@ -1,6 +1,7 @@
 
 javax.servlet.ServletContextAttributeListener
 [要在web.xml註冊]
+[其他類別實作]
 [接口方法] attributeAdded() attributeReoved() attributeReplaced()
 [事件類型] ServletContextAttributeEvent
 [使用情節] 當應用程式的某部分呼叫servletContext的setAttribute()時
@@ -11,6 +12,7 @@ javax.servlet.ServletContextAttributeListener
 
 javax.servlet.http.HttpSessionListener
 [要在web.xml註冊]
+[其他類別實作]
 [接口方法] sessionCreated() sessionDestroyed()
 [事件類型] HttpSessionEvent
 [使用情節] 當Container剛建立session時，此時客戶端上尚未在請求中傳送過此session ID
@@ -18,6 +20,7 @@ javax.servlet.http.HttpSessionListener
 
 javax.servlet.ServletRequestistener
 [要在web.xml註冊]
+[其他類別實作]
 [接口方法] requestInitialized() requestDestroyed()
 [事件類型] ServletRequestEvent
 [使用情節] 當request被初始化
@@ -26,6 +29,7 @@ javax.servlet.ServletRequestistener
 
 javax.servlet.ServletRequestAttributeListener
 [要在web.xml註冊]
+[其他類別實作]
 [接口方法] attributeAdded() attributeReoved() attributeReplaced()
 [事件類型] ServletRequestAttributeEvent
 [使用情節] 當應用程式的某部分呼叫request的setAttribute()時
@@ -35,6 +39,7 @@ javax.servlet.ServletRequestAttributeListener
 
 javax.servlet.http.HttpSessionBindingListener
 [不用再DD註冊，因為並非關聯session本身，而是session的屬性]
+[屬性類別實作]
 [接口方法] valueBound() valueUnBound()
 [事件類型] HttpSessionBindingEvent
 [使用情節] session屬性被繫結到session的時間點
@@ -43,6 +48,7 @@ javax.servlet.http.HttpSessionBindingListener
 
 javax.servlet.http.HttpSessionAttributeListener
 [要在web.xml註冊]
+[其他類別實作]
 [接口方法] attributeAdded() attributeReoved() attributeReplaced()
 [事件類型] HttpSessionBindingEvent
 [使用情節] 當應用程式的某部分呼叫session的setAttribute()時
@@ -52,6 +58,7 @@ javax.servlet.http.HttpSessionAttributeListener
 
 javax.servlet.ServletContextListener
 [要在web.xml註冊]
+[其他類別實作]
 [接口方法] contextInitialized() contextDestroyed()
 [事件類型] ServletContexEvent
 [使用情節] 當被context初始化
@@ -59,6 +66,7 @@ javax.servlet.ServletContextListener
 
 javax.servlet.http.HttpSessionActivationListener
 [不用再DD註冊，因為並非關聯session本身，而是session的屬性]
+[屬性類別實作][其他類別實作]
 [接口方法] sessionWillPassivate() sessionDidActivate() 
 [事件類型]HttpSessionEvent
 [使用情節] 當Session即將被鈍化時，當Container即將要把session遷移到不同的JVM，此事件會在session準備移動前被觸發，
