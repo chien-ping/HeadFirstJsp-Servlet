@@ -1,0 +1,29 @@
+Q:屬性是甚麼?
+A: 屬性是一種物件，為一組名值對，名稱的型別是String，值的型別是Object。
+繫結到 ServletContext、HttpServletRequest(或ServletRequest)或HttpSession 三種作用域。
+
+Context
+[non-thread safe]
+[可存取性] 此Web應用程式的任何部分
+[存活時間] ServletContext的生命週期。部屬的Web應用程式的存活時間，伺服器或應用程式結束就會被銷毀
+[用途]整個web應用程式共享
+
+
+HttpSession
+[non-thread safe]
+[可存取性] 特定session的任何Servlet與JSP。範圍包括來自相同客戶端的多個請求
+[存活時間] Session的生命週期。session可透程式被銷毀或逾時(time-out)
+[用途] 與此客戶端之session關聯的資料與資源
+
+Request
+[thread safe]
+[可存取性] 此Web應用程式的任何部分都能直接存取request物件。一般是指利用RequestDispatcher將請求轉交給他的servlet或JSP，
+還有與request相關聯的監聽器
+[存活時間] Request的生命週期。servlet的service()方法完成期間，處理此請求的執行緒(stack)的存活時間
+[用途]將Model資訊從Controller傳給view或其他單一於某次客戶端請求的資料
+
+共同方法
+Object getAttribute(String name)
+void setAttribute(String name, Object value)
+void removeAttribute(String name)
+Enumeration getAttributeNames()
