@@ -16,8 +16,7 @@ response.sendRedirect("URL String");
     sendEedirect("foo/stuff.html");
     ==>http://www.wickedlysmart.com/myApp/cool/foo/stuff.html
     
-    如果在回應被確認(committed)後呼叫sendRedirect()會拋出IllegalStateException
-    確認是指回應已經送出，也就是資料已經被沖入(flushed to)串流了
+    
     
     
     
@@ -25,8 +24,24 @@ response.sendRedirect("URL String");
  
  發生在伺服器端。由伺服器上的其他元件繼續經手處理請求(通常屬於同一個Web 應用程式)。
  
+ 從ServletRequest取得requestDispatcher物件
  RequestDispatcher view = request.getRequestDispatcher("URL String");
+ 接受字串型態的參數，代表要接管元件的路徑，如果以"/"開頭，會視為從這個"web"應用程式的根目錄開始算起，
+ 如果不是"/"開頭，會被視為"相對於原始的請求的相對路徑"
+ 
+ 
+ 從ServletContext取得requestDispatcher物件
+ RequestDispatcher view = getServletContext()getRequestDispatcher("URL String");
+ 接受字串型態的參數，代表要接管元件的路徑，必須以"/"開頭
+ 
+ 
  view.forward(request, response);
+ 將控制權完全交出去
+ 
+ view.include(request, response);
+ 要求其他元件幫忙處理請求，但不是將控制權完全交出去，而是暫時性的，控制權會回到原來的傳送者手上。
  
  
+ 如果在回應被確認(committed)後呼叫重導或請求分派會拋出IllegalStateException
+    確認是指回應已經送出，也就是資料已經被沖入(flushed to)串流了
  
