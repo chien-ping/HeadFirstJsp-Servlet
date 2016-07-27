@@ -19,7 +19,7 @@
 
 <servlet-mapping> 將內部名稱對應到公開URL名稱
 
-3. ServletConfig設定
+3. 初始參數ServletConfig設定
    每一個Servlet都有一個ServletConfig物件
      <servlet>
      <init-param> 
@@ -30,9 +30,10 @@
     
     servlet 取值: getServletConfig().getInitParameter("param name");
     有效性: 對此Servlet有效
+    
    
-4. ServletContext設定
- 一個Web Container只有一個ServletContext物件
+4. 初始參數ServletContext設定
+ 一個Web應用程式只有一個ServletContext物件
  <context-param>
     <param-name></para-name>
     <param-value></param-value>
