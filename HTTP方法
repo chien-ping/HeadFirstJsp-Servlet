@@ -1,0 +1,34 @@
+ GET
+ 透過請求URL向伺服器要資源或檔案。idempotent
+ 
+ POST
+ 向伺服器提交附有主體(payload)的資訊。non-dempotent
+ 
+ HEAD
+ 與GET相同，但伺服器的回應不包含主體(payload)。idempotent
+ 
+ TRACE
+ 要求伺服器回傳收到的請求資訊，用以測試或偵錯。idempotent
+ 
+ 
+ PUT
+ 。idempotent
+ 
+ DELETE
+表明要刪除請求URL紹的資源或檔案。idempotent
+
+ OPTIONS
+ 要求請求URL上的資源列出可回應的HTTP方法。idempotent
+ 
+ CONNECT
+ 。idempotent
+ 
+ 
+idemponent(等冪性): 一旦將訊息傳給伺服器，即使再一次傳送相同訊息，也不會引起額外效應，即對伺服器進行多次操作，其結果與第一次相同。
+在HTTP/Servlet的討論中，被用來表示被伺服器可以提出多次請求而部會對伺服器產生負面的效果，但請求的回應不一定相同，也不代表沒有副作用。
+
+
+reference: 
+http://www.ithome.com.tw/node/80062
+http://blog.lucode.net/protocol/http-method-tutorial.html
+ 
