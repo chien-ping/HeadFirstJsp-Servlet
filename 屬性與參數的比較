@@ -1,0 +1,20 @@
+屬性(Attribute)
+[類型]Application/Context 
+      Request 
+      Session
+[設定方法] setAttribute(String name, Object value)
+[回傳型別] Object
+[取值方法]ServletContext.getAttribute(String name)
+          HttpSession.getAttribute(String name)
+          ServletRequest.getAttribute(String name)
+          
+          
+參數(Parameter)
+[類型]Application/Context 初始參數 
+      request請求參數
+      Servlet初始參數
+[設定方法] 無法在程式碼中設定context servlet的初始參數，只能在web.xml設定
+[回傳型別] String
+[取值方法]ServletContext.getInitparameter(String name)
+          ServletConfig.getInitparameter(String name)
+          ServletRequest.getInitparameter(String name)
