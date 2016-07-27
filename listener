@@ -1,0 +1,41 @@
+
+javax.servlet.ServletContextAttributeListener
+[接口方法] attributeAdded() attributeReoved() attributeReplaced()
+[事件類型] ServletContextAttributeEvent
+[使用情節] 追蹤 ServletContext中的屬性是否被新增、移除、取代
+
+
+javax.servlet.http.HttpSessionListener
+[接口方法] sessionCreated() sessionDestroyed()
+[事件類型] HttpSessionEvent
+[使用情節] 
+
+javax.servlet.ServletRequestistener
+[接口方法] requestInitialized() requestDestroyed()
+[事件類型] ServletRequestEvent
+[使用情節] 
+
+javax.servlet.ServletRequestAttributeListener
+[接口方法] attributeAdded() attributeReoved() attributeReplaced()
+[事件類型] ServletRequestAttributeEvent
+[使用情節] 追蹤 request中的屬性是否被新增、移除、取代
+
+javax.servlet.http.HttpSessionBindingListener
+[接口方法] valueBound() valueUnBound()
+[事件類型] HttpSessionBindingEvent
+[使用情節] 
+
+javax.servlet.http.HttpSessionAttributeListener
+[接口方法] attributeAdded() attributeReoved() attributeReplaced()
+[事件類型] HttpSessionBindingEvent
+[使用情節] 
+
+javax.servlet.ServletContextListener
+[接口方法] contextInitialized() contextDestroyed()
+[事件類型] ServletContexEvent
+[使用情節] 
+
+javax.servlet.http.HttpSessionActivationListener
+[接口方法] sessionDidActivate() sessionWillPassivate()
+[事件類型]HttpSessionEvent
+[使用情節] 
