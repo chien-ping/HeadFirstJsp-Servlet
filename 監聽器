@@ -8,7 +8,8 @@ javax.servlet.ServletContextAttributeListener
 javax.servlet.http.HttpSessionListener
 [接口方法] sessionCreated() sessionDestroyed()
 [事件類型] HttpSessionEvent
-[使用情節] 
+[使用情節] 當Container剛建立session時，此時客戶端上尚未在請求中傳送過此session ID
+           當Container將session設為無效時，可能由於Session逾時或程式呼叫session的invalidate()方法
 
 javax.servlet.ServletRequestistener
 [接口方法] requestInitialized() requestDestroyed()
