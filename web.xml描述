@@ -58,3 +58,12 @@
  <%@ page isELIgnored="true" %>
 
 
+ 7. 設定Session逾時時間
+ <session-config>
+   <session-timeout></session-timeout>
+ </session-config>
+ 單位為分鐘。
+ 
+ 如果想為特定session設定timeout時間
+ session.setMaxInactiveInterval();
+ 單位為秒。
