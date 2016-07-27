@@ -1,0 +1,18 @@
+客戶端與Container交換Session ID的方式
+
+1. Cookie
+
+Container 產生Session ID，建立新的cookie物件，將session ID 放進Cookie並將 Set-Cookie加入回應標頭。
+後續請求中container會從請求的Cookie取得Session ID，利用此ID對應到某個既有的Session，並將此Session與當前的請求關聯
+
+
+2. URL rewrite
+停用Cookie的客戶端會忽略Set-Cookie回應標頭。
+URL重寫將位於Cookie裡的Session ID放到此應用程式的每個URL尾端。
+URL重寫只會在Cookie失效，以及呼叫回應物件的encodeURL()時才會啟動。
+response.encodeURL("");
+response.encodeRedirectURL();
+URL encoding全然關乎回應物件
+
+一般可能可以使用filter進行處理
+如果用Spring，Spring已經進行URL rewrite
