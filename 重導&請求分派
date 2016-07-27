@@ -1,6 +1,10 @@
 重導(redirect)
 
-response.sendRedirect("URL");
+發生在客戶端。由客戶端重新發送請求。
+伺服器回傳status code = 301的狀態碼，並有一Location標頭，提供URL值。瀏覽器收到301的狀態碼，會找Location標頭，取得新URL內容，
+並以此URL發送新請求。瀏覽器的網址列會變成新的URL。
+
+response.sendRedirect("URL String");
 
  1. 絕對URL: 完整URL路徑
  2. 相對URL:
@@ -11,3 +15,18 @@ response.sendRedirect("URL");
  b. 不使用/開頭: 相對於原始請求URL的相對路徑
     sendEedirect("foo/stuff.html");
     ==>http://www.wickedlysmart.com/myApp/cool/foo/stuff.html
+    
+    如果在回應被確認(committed)後呼叫sendRedirect()會拋出IllegalStateException
+    確認是指回應已經送出，也就是資料已經被沖入(flushed to)串流了
+    
+    
+    
+ 請求分派(request dispatch)
+ 
+ 發生在伺服器端。由伺服器上的其他元件繼續經手處理請求(通常屬於同一個Web 應用程式)。
+ 
+ RequestDispatcher view = request.getRequestDispatcher("URL String");
+ view.forward(request, response);
+ 
+ 
+ 
