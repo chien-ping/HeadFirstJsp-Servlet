@@ -1,0 +1,55 @@
+註解(comment)
+
+<!-- HTML註解 -->
+<%-- JSP註解  --%>
+
+指令(directive)
+
+<%@  %>
+
+a. page指令
+將JSP轉譯為servlet時要提供給container的資訊
+用來定義頁面特定(page-specific)的特性，共有13個屬性
+ import
+ 匯入套件
+ isThreadSafe
+ 定義轉譯出的servlet是否需要實作SingleThreadModel介面。預設值為true，表示執行緒安全
+ contentType
+ 為JSP回應定義MIME Type(以及選用的字元編碼)
+ isELIgnored
+ 定義JSP在轉譯時是否要忽略EL表達式
+ isErrorPage
+ 定義當前頁面是否為另一個JSP的錯誤頁面，預設值是false，如果被設為true，該頁面就可以存取exception隱含物件(參照到引發立外或錯誤(Throwable))
+ errorPage
+ 定義一個URL，當未捕捉的例外或錯誤發生時，就會被送往此URL所參照的資源，如果這個URL指向某JSP，該JSP就會設定屬性 isErrorPage="true"
+ language
+ 定義要在Scriptlet、運算式與告中使用的指令稿語言，目前唯一可接受的設定值為"java"
+ extends
+ 定義JSP轉譯成Servlet時要繼承的父類別，此設定會覆蓋Container所提供的類別階層
+ session
+ 定義此頁面是否包含session隱含物件。預設值為true
+ buffer
+ 定一緩沖機制(buffering)如何被out隱含物件(指向JspWriter)使用
+ autoFlush
+ 定意輸出緩衝區的資料是否會被自動送出(flushed)。預設值為true
+ info
+ 定議會被放到轉譯頁面的字串。可以利用轉譯出的Servlet所繼承到的getServletInfo()方法來取得
+ pageEncoding
+ 為JSP定義字元編碼，預設值為"ISO-8859-1"
+ 
+b. taglib指令
+用來定義可供JSP使用的標籤程式庫(tag libraries)
+c. include指令
+定義在轉譯期間要被增加到當前頁面的文字或程式碼，讓使用者建立可重利用的區塊。
+
+宣告(declaration)
+<%!     %>
+再轉譯出的servlet類別宣告成員變數或方法
+
+
+Scriptlet
+<% %>
+
+運算式(expression)
+<%= %>
+運算式在轉譯時會被當成 put.print()的參數
