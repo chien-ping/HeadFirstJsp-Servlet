@@ -1,1 +1,26 @@
 
+Application
+[Servlet]getServletContext()
+[JSP]application
+     pageContext.getAttribute("", PageContext.APPLICATION_SCOPE)
+
+Session
+[Servlet]request.getSession()
+[JSP]session
+     pageContext.getAttribute("", PageContext.SESSION_SCOPE)
+
+Request
+[Servlet]request
+[JSP]request
+     pageContext.getAttribute("", PageContext.REQUEST_SCOPE)
+     
+Page
+[Servlet]
+[JSP]pageContext
+作用域範圍為當前頁面，當請求被forward即不再有效。
+但是如果頁面用include的方式，則仍有效。
+http://stackoverflow.com/questions/22766332/page-scope-scope-in-jsp
+
+
+pageContext.findAttribute("")
+　從最受限制的範圍找到最不受限的範圍: page > request > session > application
