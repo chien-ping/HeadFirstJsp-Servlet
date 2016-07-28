@@ -1,0 +1,2 @@
+除了pageContext，都是存放在作用域的屬性(Attribute)，而非物件的特性(property)，如果要取得物件的特性，需要透過pagContext
+P388
