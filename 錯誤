@@ -1,0 +1,6 @@
+P159
+一個JVM上可能有多個servletContext
+
+P383
+currentTip應該是property
+http://stackoverflow.com/questions/8679988/attribute-or-property
