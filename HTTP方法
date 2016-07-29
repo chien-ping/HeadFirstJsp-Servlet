@@ -27,6 +27,10 @@
 idemponent(等冪性): 一旦將訊息傳給伺服器，即使再一次傳送相同訊息，也不會引起額外效應，即對伺服器進行多次操作，其結果與第一次相同。
 在HTTP/Servlet的討論中，被用來表示被伺服器可以提出多次請求而部會對伺服器產生負面的效果，但請求的回應不一定相同，也不代表沒有副作用。
 
+post處理方式
+1.頁面:鎖定按鈕
+2. 程式: 請求完成後重導(redirect)，銷除post
+http://stackoverflow.com/questions/722547/avoiding-form-resubmit-in-php-when-pressing-f5
 
 reference: 
 http://www.ithome.com.tw/node/80062
