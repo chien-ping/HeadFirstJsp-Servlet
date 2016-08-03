@@ -1,0 +1,4 @@
+P395
+Container如何找到tld
+當應用程式部屬完畢時，Container會搜尋WEB-INF和其子目錄(或WEB-INF/lib裡的JAR檔)，找出.tld檔案並讀取uri。建立一個Map，
+指明"對應這個URI的TLD實際上是在哪個位置的檔案"　
