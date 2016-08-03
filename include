@@ -1,1 +1,12 @@
 
+include指令
+<%@ include file=""   %>
+轉譯期插入
+P407
+
+
+
+include標準動作
+<jsp:include page="" />
+執行期插入
+P408
