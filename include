@@ -10,3 +10,9 @@ include標準動作
 <jsp:include page="" />
 執行期插入
 P408
+
+JSTL標籤
+<c:import url="">
+執行期插入
+url可以參照到container以外的資源
+P460
